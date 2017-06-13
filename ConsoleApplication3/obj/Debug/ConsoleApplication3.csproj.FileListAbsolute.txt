@@ -1,0 +1,9 @@
+c:\users\kevin\documents\visual studio 2015\Projects\ConsoleApplication3\ConsoleApplication3\bin\Debug\ConsoleApplication3.exe.config
+c:\users\kevin\documents\visual studio 2015\Projects\ConsoleApplication3\ConsoleApplication3\bin\Debug\ConsoleApplication3.exe
+c:\users\kevin\documents\visual studio 2015\Projects\ConsoleApplication3\ConsoleApplication3\bin\Debug\ConsoleApplication3.pdb
+c:\users\kevin\documents\visual studio 2015\Projects\ConsoleApplication3\ConsoleApplication3\obj\Debug\ConsoleApplication3.csprojResolveAssemblyReference.cache
+c:\users\kevin\documents\visual studio 2015\Projects\ConsoleApplication3\ConsoleApplication3\obj\Debug\ConsoleApplication3.exe
+c:\users\kevin\documents\visual studio 2015\Projects\ConsoleApplication3\ConsoleApplication3\obj\Debug\ConsoleApplication3.pdb
+C:\Users\kevin\documents\visual studio 2015\Projects\ConsoleApplication3\ConsoleApplication3\bin\Debug\Interop.MSXML2.dll
+C:\Users\kevin\documents\visual studio 2015\Projects\ConsoleApplication3\ConsoleApplication3\obj\Debug\Interop.MSXML2.dll
+C:\Users\kevin\documents\visual studio 2015\Projects\ConsoleApplication3\ConsoleApplication3\obj\Debug\ConsoleApplication3.csproj.ResolveComReference.cache
