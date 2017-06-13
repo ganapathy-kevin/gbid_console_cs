@@ -20,8 +20,19 @@ namespace ConsoleApplication3.GB {
     using System.Web.Services.Protocols;
     using System.Xml.Serialization;
     using System.ComponentModel;
-    
-    
+
+    public partial class Security : SoapHeader
+    {
+        public UserNameToken UserNameToken { get; set; }
+    }
+
+    public partial class UserNameToken
+    {
+        public string UserName { get; set; }
+        public string Password { get; set; }
+    }
+
+
     /// <remarks/>
     // CODEGEN: The optional WSDL extension element 'PolicyReference' from namespace 'http://schemas.xmlsoap.org/ws/2004/09/policy' was not handled.
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
@@ -61,7 +72,7 @@ namespace ConsoleApplication3.GB {
             this.Url = global::ConsoleApplication3.Properties.Settings.Default.ConsoleApplication3_GB_ID3global;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
-                this.useDefaultCredentialsSetExplicitly = false;
+                this.useDefaultCredentialsSetExplicitly = true;
             }
             else {
                 this.useDefaultCredentialsSetExplicitly = true;
@@ -74,15 +85,16 @@ namespace ConsoleApplication3.GB {
             }
             set {
                 if ((((this.IsLocalFileSystemWebService(base.Url) == true) 
-                            && (this.useDefaultCredentialsSetExplicitly == false)) 
+                            && (this.useDefaultCredentialsSetExplicitly == true)) 
                             && (this.IsLocalFileSystemWebService(value) == false))) {
-                    base.UseDefaultCredentials = false;
+                    base.UseDefaultCredentials = true;
                 }
                 base.Url = value;
             }
         }
         
         public new bool UseDefaultCredentials {
+            
             get {
                 return base.UseDefaultCredentials;
             }
@@ -2162,6 +2174,7 @@ namespace ConsoleApplication3.GB {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.id3global.com/ID3gWS/2013/04/IGlobalProfile/GetProfiles", RequestNamespace="http://www.id3global.com/ID3gWS/2013/04", ResponseNamespace="http://www.id3global.com/ID3gWS/2013/04", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [SoapHeader("Security")]
         public GlobalProfile[] GetProfiles(string OrgID, bool IncludeTest, [System.Xml.Serialization.XmlIgnoreAttribute()] bool IncludeTestSpecified, bool IncludePreEffective, [System.Xml.Serialization.XmlIgnoreAttribute()] bool IncludePreEffectiveSpecified, bool IncludeEffective, [System.Xml.Serialization.XmlIgnoreAttribute()] bool IncludeEffectiveSpecified, bool IncludeRetired, [System.Xml.Serialization.XmlIgnoreAttribute()] bool IncludeRetiredSpecified) {
             object[] results = this.Invoke("GetProfiles", new object[] {
                         OrgID,

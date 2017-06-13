@@ -42,20 +42,21 @@ namespace ConsoleApplication3
 
         public static void GettingProfiles()
         {
-            try
-            {
+            //try
+            //{
                 GB.GlobalProfile[] globalProfiles = GlobalProfilesCheck.GetProfiles(CheckingCredentials(), true, true, true, true, true, true, true, true);
-            }
-            catch
-            {
-                Console.WriteLine("Could not get profiles from GB");
-                Console.ReadLine();
-            }
+            //}
+            //catch
+            //{
+            //    Console.WriteLine("Could not get profiles from GB");
+            //    Console.ReadLine();
+            //}
            
         }
 
         public static void Execute()
         {
+           
             HttpWebRequest request = CreateWebRequest();
             Console.WriteLine(request.Address);
             Console.WriteLine(request.Connection);
@@ -103,7 +104,7 @@ namespace ConsoleApplication3
 
         static void Main(string[] args)
         {
-            CheckingCredentials();///    Execute();
+            ///    Execute();
 
             GettingProfiles();
             Console.WriteLine("Press Enter to Exit");
