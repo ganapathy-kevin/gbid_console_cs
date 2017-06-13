@@ -72,7 +72,7 @@ namespace ConsoleApplication3.GB {
             this.Url = global::ConsoleApplication3.Properties.Settings.Default.ConsoleApplication3_GB_ID3global;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
-                this.useDefaultCredentialsSetExplicitly = true;
+                this.useDefaultCredentialsSetExplicitly = false;
             }
             else {
                 this.useDefaultCredentialsSetExplicitly = true;
@@ -85,9 +85,9 @@ namespace ConsoleApplication3.GB {
             }
             set {
                 if ((((this.IsLocalFileSystemWebService(base.Url) == true) 
-                            && (this.useDefaultCredentialsSetExplicitly == true)) 
+                            && (this.useDefaultCredentialsSetExplicitly == false)) 
                             && (this.IsLocalFileSystemWebService(value) == false))) {
-                    base.UseDefaultCredentials = true;
+                    base.UseDefaultCredentials = false;
                 }
                 base.Url = value;
             }
