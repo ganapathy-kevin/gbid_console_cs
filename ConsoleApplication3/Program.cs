@@ -17,6 +17,43 @@ namespace ConsoleApplication3
         /// <summary>
         /// Execute a Soap WebService call
         /// </summary>
+        /// 
+
+        public static string Username = "casa@easyconvey.com";
+        public static string Password = "C@sa&&77Conv323Eas";
+        public static GB.basicHttpBinding_GlobalProfile GlobalProfilesCheck = new GB.basicHttpBinding_GlobalProfile();
+        public static GB.basicHttpBinding_GlobalCredentials GlobalCredentialsCheck = new GB.basicHttpBinding_GlobalCredentials();
+
+        public static string CheckingCredentials()
+        {
+            GB.GlobalAccount globalAccount = new GB.GlobalAccount();
+            globalAccount = GlobalCredentialsCheck.CheckCredentials(Username, Password);
+
+                Console.WriteLine(globalAccount.Username);
+                Console.WriteLine(globalAccount.AccountID);
+                Console.WriteLine(globalAccount.Email);
+                Console.WriteLine("ORGINIZATION ID: " + globalAccount.OrgID);
+                Console.WriteLine(globalAccount.OrgName);
+            
+            Console.ReadLine();
+            
+            return globalAccount.OrgID;
+        }
+
+        public static void GettingProfiles()
+        {
+            try
+            {
+                GB.GlobalProfile[] globalProfiles = GlobalProfilesCheck.GetProfiles(CheckingCredentials(), true, true, true, true, true, true, true, true);
+            }
+            catch
+            {
+                Console.WriteLine("Could not get profiles from GB");
+                Console.ReadLine();
+            }
+           
+        }
+
         public static void Execute()
         {
             HttpWebRequest request = CreateWebRequest();
@@ -66,7 +103,9 @@ namespace ConsoleApplication3
 
         static void Main(string[] args)
         {
-            Execute();
+            CheckingCredentials();///    Execute();
+
+            GettingProfiles();
             Console.WriteLine("Press Enter to Exit");
             Console.ReadLine();
         }
